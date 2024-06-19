@@ -37,10 +37,10 @@ const Decrypt: FC = () => {
         <Stack spacing={2} alignItems="center">
             <LottieAnimation animationData={PasswordAnimation}/>
             <Typography variant="h5" fontWeight="bold" align="center">
-                Decrypt your accounts
+                Dekripsi akun Anda
             </Typography>
             <Typography variant="subtitle2" align="center">
-                Enter your decryption password to get access to your accounts
+                Masukkan kata sandi dekripsi Anda untuk mendapatkan akses ke akun Anda
             </Typography>
             <TelegramTextField
                 fullWidth
@@ -48,7 +48,7 @@ const Decrypt: FC = () => {
                 label="Password"
                 value={password}
                 error={wrongPassword}
-                helperText={wrongPassword ? "Wrong password" : null}
+                helperText={wrongPassword ? "Kata sandi salah" : null}
                 onChange={e => {
                     setPassword(e.target.value);
                     setWrongPassword(false);
@@ -64,7 +64,7 @@ const Decrypt: FC = () => {
                     onClick={() => {
                         navigate("/reset");
                     }}>
-                    Reset password...
+                    Setel ulang kata sandi...
                 </Button>
                 : null}
         </Stack>
