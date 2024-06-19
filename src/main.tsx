@@ -53,8 +53,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <PlausibleAnalyticsProvider domain={import.meta.env.VITE_PLAUSIBLE_DOMAIN}
                                 apiHost={import.meta.env.VITE_PLAUSIBLE_API_HOST}>
       <SettingsManagerProvider>
-          <BiometricsManagerProvider requestReason="Allow access to biometrics to be able to decrypt your accounts"
-                                     authenticateReason="Authenticate to decrypt your accounts">
+          <BiometricsManagerProvider requestReason="Izinkan akses ke biometrik untuk dapat mendekripsi akun Anda"
+                                     authenticateReason="Otentikasi untuk mendekripsi akun Anda">
                   <EncryptionManagerProvider>
                       <StorageManagerProvider>
                           <RouterProvider router={router}/>
