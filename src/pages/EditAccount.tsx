@@ -42,10 +42,10 @@ export default function EditAccount() {
     return <Stack spacing={2} alignItems="center">
         <LottieAnimation animationData={CreateAnimation}/>
         <Typography variant="h5" fontWeight="bold" align="center">
-            Edit account info
+            Pengaturan informasi akun
         </Typography>
         <Typography variant="subtitle2" align="center">
-            Modify account information
+            Ubah informasi akun
         </Typography>
         <TelegramTextField
             fullWidth
@@ -72,7 +72,7 @@ export default function EditAccount() {
         <Button startIcon={<DeleteOutlinedIcon/>} color="error" onClick={() => {
             notificationOccurred("warning");
             window.Telegram.WebApp.showPopup({
-                message: `Are you sure you want to delete ${state.account.issuer ? 
+                message: `Apakah Anda yakin ingin menghapus ${state.account.issuer ? 
                     `${state.account.issuer} (${state.account.label})` : 
                     state.account.label}?`,
                 buttons: [
@@ -85,7 +85,7 @@ export default function EditAccount() {
                 navigate("/");
             });
         }}>
-            Delete account
+            Hapus akun
         </Button>
     </Stack>;
 }
