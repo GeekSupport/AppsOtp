@@ -15,7 +15,7 @@ export default function NewAccountButton() {
                         color="text.primary"
                         sx={{lineHeight: '1em'}}
                     >
-                        Add new account
+                        Tambahkan akun baru
                     </Typography>
                 </Stack>
             </Stack>
