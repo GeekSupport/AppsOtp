@@ -8,7 +8,7 @@ export default function useAccount(accountUri?: string): { code: string, period:
         if (!accountUri) return;
         const otp = URI.parse(accountUri);
         if (otp instanceof HOTP) {
-            throw new Error("HOTP is not supported");
+            throw new Error("HOTP tidak didukung");
         }
 
         setPeriod(otp.period);
