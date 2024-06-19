@@ -71,12 +71,12 @@ const Settings: FC = () => {
 
     return <Stack spacing={1}>
         <Typography fontWeight="800" color="primary" fontSize="small" sx={{paddingY: theme.spacing(0.5)}}>
-            Security
+            Keamanan
         </Typography>
         <SettingsOption
             onClick={() => { navigate("/changePassword"); }}
-            text="Password"
-            value="Change"
+            text="Kata sandi"
+            value="Mengubah"
             icon={LockOutlinedIcon}/>
 
         <SettingsOption
@@ -84,7 +84,7 @@ const Settings: FC = () => {
                 impactOccurred("light");
                 settingsManager?.setKeepUnlocked(!settingsManager.shouldKeepUnlocked);
             }}
-            text="Keep unlocked" value={settingsManager?.shouldKeepUnlocked ? "Enabled" : "Disabled"}
+            text="Tetap tidak terkunci" value={settingsManager?.shouldKeepUnlocked ? "Enabled" : "Disabled"}
             icon={KeyOutlinedIcon}/>
 
         <SettingsOption
@@ -103,7 +103,7 @@ const Settings: FC = () => {
             }}
             text="Use biometrics"
             value={
-                biometricsManager?.isAvailable ? (biometricsManager.isSaved ? "Enabled" : "Disabled") : "Not available"
+                biometricsManager?.isAvailable ? (biometricsManager.isSaved ? "Enabled" : "Disabled") : "Tidak tersedia"
             }
             disabled={!biometricsManager?.isAvailable}
             icon={FingerprintIcon}/>
@@ -113,11 +113,11 @@ const Settings: FC = () => {
         }} text="Lock accounts" icon={LogoutOutlinedIcon}/>
 
         <Typography fontWeight="800" color="primary" fontSize="small" sx={{paddingY: theme.spacing(0.5)}}>
-            Accounts
+            Akun
         </Typography>
         <SettingsOption
             onClick={() => { navigate("/") }}
-            text="Accounts"
+            text="Akun"
             value={storageManager ? Object.keys(storageManager.accounts).length.toString() : "0"}
             icon={PersonOutlineOutlinedIcon}/>
 
@@ -125,20 +125,17 @@ const Settings: FC = () => {
             onClick={() => {
                 window.Telegram.WebApp.openTelegramLink(`https://t.me/${import.meta.env.VITE_BOT_USERNAME}?start=export`);
             }}
-            text="Export accounts"
+            text="Ekspor akun"
             icon={FileDownloadOutlinedIcon}/>
 
         <SettingsOption onClick={() => {
             notificationOccurred("warning");
             navigate("/reset");
-        }} text="Remove all accounts" icon={CloseOutlinedIcon}/>
+        }} text="Hapus semua akun" icon={CloseOutlinedIcon}/>
 
         <Typography color="text.secondary" fontSize="small" align="center" sx={{paddingY: theme.spacing(1)}}>
-            TeleOTP<br/>
-            Version: {APP_VERSION}<br/>
-            <Link color="inherit" target="_blank" rel="noopener" href={APP_HOMEPAGE}>
-                GitHub repository
-            </Link>
+            AppsOTP<br/>
+            Versi: {APP_VERSION}<br/>
         </Typography>
     </Stack>
 }
