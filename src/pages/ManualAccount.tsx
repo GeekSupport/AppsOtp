@@ -20,7 +20,7 @@ export default function ManualAccount() {
         try {
             navigate("/create", {state: {
                     otp: new TOTP({
-                        label: "TeleOTP",
+                        label: "AppsOTP",
                         secret
                     }),
                 } as NewAccountState});
@@ -35,17 +35,17 @@ export default function ManualAccount() {
     return <Stack spacing={2} alignItems="center">
         <LottieAnimation animationData={ManualAnimation}/>
         <Typography variant="h5" fontWeight="bold" align="center">
-            Add account manually
+            Tambahkan akun secara manual
         </Typography>
         <Typography variant="subtitle2" align="center">
-            Enter provided account secret
+            Masukkan rahasia akun yang diberikan
         </Typography>
         <TelegramTextField
             fullWidth
-            label="Secret"
+            label="Rahasia"
             value={secret}
             error={invalid}
-            helperText={invalid ? "Invalid secret" : null}
+            helperText={invalid ? "Rahasia tidak valid" : null}
             onChange={e => {
                 setSecret(e.target.value);
                 setInvalid(false);
