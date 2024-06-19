@@ -118,7 +118,7 @@ const Accounts: FC = () => {
                 sx={{textTransform: 'none', paddingY: theme.spacing(1.5)}}
                 onClick={() => { navigate("/settings"); }}
             >
-                <Typography fontWeight="bold" color="text" fontSize="small">Open settings</Typography>
+                <Typography fontWeight="bold" color="text" fontSize="small">Buka pengaturan</Typography>
             </Button>
         </Box>
 
