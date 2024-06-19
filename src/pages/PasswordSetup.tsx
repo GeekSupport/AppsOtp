@@ -35,7 +35,7 @@ const PasswordSetup: FC<{change?: boolean}> = ({change = false}) => {
         }
 
         return true;
-    }, change ? "Change password" : "Create password");
+    }, change ? "Ganti kata sandi" : "Buat kata sandi");
 
     return <>
         <Stack spacing={2} alignItems="center">
@@ -44,18 +44,18 @@ const PasswordSetup: FC<{change?: boolean}> = ({change = false}) => {
                 animationData={change ? ChangePasswordAnimation : NewPasswordAnimation}
             />
             <Typography variant="h5" fontWeight="bold" align="center">
-                {change ? "Set new password" : "Password setup"}
+                {change ? "Tetapkan kata sandi baru" : "Pengaturan kata sandi"}
             </Typography>
             <Typography variant="subtitle2" align="center">
-                Enter a new encryption password to safely store your accounts
+                Masukkan kata sandi enkripsi baru untuk menyimpan akun Anda dengan aman
             </Typography>
             <TelegramTextField
                 fullWidth
                 type="password"
-                label="Password"
+                label="Kata sandi"
                 value={password}
                 error={badLength}
-                helperText={badLength ? "The password length must be 3 or more" : null}
+                helperText={badLength ? "Panjang kata sandi harus 3 atau lebih" : null}
                 onChange={e => {
                     setPassword(e.target.value);
                     setNotMatches(false);
@@ -65,10 +65,10 @@ const PasswordSetup: FC<{change?: boolean}> = ({change = false}) => {
             <TelegramTextField
                 fullWidth
                 type="password"
-                label="Repeat password"
+                label="Masukkan kata kunci kembali"
                 value={passwordRepeat}
                 error={notMatches}
-                helperText={notMatches ? "Passwords do not match" : null}
+                helperText={notMatches ? "Sandi tidak cocok" : null}
                 onChange={e => {
                     setPasswordRepeat(e.target.value);
                     setNotMatches(false);
