@@ -18,7 +18,7 @@ const NewAccount: FC = () => {
 
     const scan = useTelegramQrScanner(useCallback((scanned) => {
         function invalidPopup() {
-            window.Telegram.WebApp.showAlert("Invalid QR code");
+            window.Telegram.WebApp.showAlert("Kode QR tidak valid");
             notificationOccurred("error");
         }
 
@@ -32,7 +32,7 @@ const NewAccount: FC = () => {
             }
 
             if (otp instanceof HOTP) {
-                window.Telegram.WebApp.showAlert("HOTP support is not implemented yet :(");
+                window.Telegram.WebApp.showAlert("Dukungan HOTP belum diterapkan :(");
                 notificationOccurred("error");
                 return;
             }
@@ -58,23 +58,23 @@ const NewAccount: FC = () => {
         <Stack spacing={2} alignItems="center">
             <LottieAnimation animationData={NewAccountAnimation}/>
             <Typography variant="h5" fontWeight="bold" align="center">
-                Add new account
+                Tambahkan akun baru
             </Typography>
             <Typography variant="subtitle2" align="center">
-                Protect your account with two-factor authentication (Google Authenticator import is also supported)
+                Lindungi akun Anda dengan autentikasi dua faktor (impor Google Authenticator juga didukung)
             </Typography>
             <Button fullWidth variant="contained" startIcon={<QrCodeScannerIcon/>} onClick={() => {
                 scan()
             }}>
-                Scan QR code
+                Pindai kode QR
             </Button>
             <Divider sx={{width: '100%'}}>
-                <Typography>OR</Typography>
+                <Typography>ATAU</Typography>
             </Divider>
             <Button fullWidth onClick={() => {
                 navigate("/manual");
             }}>
-                Enter manually
+                Masukkan secara manual
             </Button>
         </Stack>
     </>;
