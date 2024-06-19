@@ -32,7 +32,7 @@ export function CreateAccount() {
     const [selectedColor, setSelectedColor] = useState<Color>("primary");
 
     useTelegramMainButton(() => {
-        analytics?.trackEvent("New account");
+        analytics?.trackEvent("Akun baru");
         storageManager?.saveAccount({
             id,
             color: selectedColor,
@@ -49,10 +49,10 @@ export function CreateAccount() {
     return <Stack spacing={2} alignItems="center">
         <LottieAnimation animationData={CreateAnimation}/>
         <Typography variant="h5" fontWeight="bold" align="center">
-            Add new account
+            Tambahkan akun baru
         </Typography>
         <Typography variant="subtitle2" align="center">
-            Enter additional account information
+            Masukkan informasi akun tambahan
         </Typography>
         <TelegramTextField
             fullWidth
