@@ -17,36 +17,36 @@ const ResetAccounts: FC = () => {
         storageManager?.clearStorage();
         navigate("/");
         return true;
-    }, "Remove PERMANENTLY", !verified);
+    }, "Hapus SECARA PERMANEN", !verified);
 
     return <>
         <Stack spacing={2} alignItems="center">
             <LottieAnimation animationData={PasswordResetAnimation}/>
             <Typography variant="h5" fontWeight="bold" align="center">
-                Password reset
+                Penyetelan ulang kata sandi
             </Typography>
             <Stack>
                 <Typography variant="subtitle2" align="center">
-                    You are about to delete all your accounts <b>PERMANENTLY</b>. You won&apos;t be able to restore them.
+                    Anda akan menghapus semua akun Anda <b>SECARA PERMANEN</b>. You won&apos;Anda tidak dapat memulihkannya.
                 </Typography>
                 <Typography variant="subtitle2" align="center">
-                    If you are absolutely sure, type the phrase
+                    Jika Anda benar-benar yakin, ketikkan frasa tersebut
                 </Typography>
                 <Typography variant="subtitle2" align="center" fontWeight={900}>
-                    &quot;Yes, delete everything&quot;:
+                    &quot;Ya, hapus semuanya&quot;:
                 </Typography>
             </Stack>
             <TelegramTextField
                 fullWidth
                 type="phrase"
-                label="Delete your accounts and reset the password?"
+                label="Hapus akun Anda dan setel ulang kata sandi?"
                 value={phrase}
                 error={!verified}
-                helperText={!verified ? "Type \"Yes, delete everything\"" : null}
+                helperText={!verified ? "Jenis \"Ya, hapus semuanya\"" : null}
                 onChange={e => {
                     const value = e.target.value;
                     setPhrase(value);
-                    setVerified(value.trim().toLowerCase() === "yes, delete everything");
+                    setVerified(value.trim().toLowerCase() === "ya, hapus semuanya");
                 }}
             />
         </Stack>
